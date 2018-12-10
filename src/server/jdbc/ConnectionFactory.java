@@ -12,8 +12,9 @@ public class ConnectionFactory {
     
     public static Connection getConexao() {
         try {
+        	Class.forName("com.mysql.jdbc.Driver");
             return DriverManager.getConnection(URL, USER, PASS);
-        } catch (SQLException ex) {
+        } catch (SQLException | ClassNotFoundException ex) {
         	ex.printStackTrace();
         }
         return null;

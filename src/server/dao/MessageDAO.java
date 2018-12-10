@@ -16,7 +16,6 @@ public class MessageDAO {
 	public static List<Mensagem> selectAll() {
 		List<Mensagem> messageList = new ArrayList<>();
 		String sql = "SELECT * FROM chatlog.t_mensagems";
-
         try (Connection conn = ConnectionFactory.getConexao();
                 PreparedStatement ps = conn.prepareStatement(sql);
                 ResultSet rs = ps.executeQuery()) {
